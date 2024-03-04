@@ -1,0 +1,137 @@
+﻿@using DevExtreme.AspNet.Mvc
+@using DevExtreme.AspNet.Mvc.Builders
+@using ISAdminWeb.Models.Company;
+
+@{
+    ViewData["Title"] = "Companies";
+}
+@model Domain.Company
+
+<link href="~/css/site.css" id="app-style" rel="stylesheet" />
+<script src="~/js/ISAdmin.js"></script>
+<script src="~/js/ISAdminDevextreme.js"></script>
+<script src="~/js/Pages/Company/List/CompaniesListDevexpress.js"></script>
+<script src="~/js/Pages/Company/Edit.js"></script>
+
+<div class="card">
+    <div class="card-body">
+        <!-- DataGrid Start -->
+        <div >
+            @(
+                Html.DevExtreme().DataGrid()
+                                            .ID("gridContainer")
+                                            .ShowBorders(true)
+                                            .DataSource(d => d
+                                            .WebApi()
+                                            .Controller("Company")
+                                            .Key("ID")
+                                            .LoadAction("Get_Company_List")
+                                            )
+                                            .Columns(c =>
+                                            {
+                                                c.Add().DataField("ID").Width(70);
+                                                c.Add().DataField("JuridicalName");
+                                                c.Add().DataField("CommercialName");
+                                                c.Add().DataField("Email");
+                                                c.Add().Caption("Status").CalculateCellValue("function(data) { return getStatusText(data.Status); }").AllowEditing(true);
+                                                c.Add().Name("contextBtns").Type(GridCommandColumnType.Buttons)
+                                                .Buttons(buttons =>
+                                                    {
+                                                        buttons.Add().Name("details").Icon("file").OnClick("infoButtonClicked").Visible(true);
+                                                        buttons.Add().Name("edit").Icon("edit").OnClick("editButtonClicked").Visible(true);
+                                                        buttons.Add().Name("Context").Icon("overflow").OnClick("onClickContextMenuBtn");
+                                                    });
+                                            })
+                        .Toolbar(toolbar =>
+                        {
+                            toolbar.Items(items =>
+                            {
+                                items.Add()
+                            .Location(ToolbarItemLocation.Before)
+                            .Widget(widget =>
+                            widget.Button()
+                            .Text("Add")
+                            .Icon("plus")
+                            .StylingMode(ButtonStylingMode.Contained)
+                            .Type(ButtonType.Success)
+                            .OnClick("addCompanyButtonClicked")
+                            .Visible(true)
+                            );
+
+                                items.Add()
+                            .Location(ToolbarItemLocation.After)
+                            .LocateInMenu(ToolbarItemLocateInMenuMode.Auto)
+                            .Widget(widget =>
+                            widget.Button()
+                            .Text("Refresh")
+                            .Icon("refresh")
+                            .StylingMode(ButtonStylingMode.Contained)
+                            .Type(ButtonType.Success)
+                            .OnClick("getCompanyList")
+                            .Visible(true)
+                            );
+                            });
+                        })
+                        )
+        </div>
+        @(
+            Html.DevExtreme().ContextMenu()
+                .ID("NewRegisteredContext")
+                .Target("null")
+                .OnItemClick("onContextMenuItemClick")
+                .Position(p => p.At(HorizontalAlignment.Left, VerticalAlignment.Bottom))
+                .DataSource(new object[]
+                {
+                new { id = "disable", text = "Activate" },
+                new { id = "active", text = "Disable" }
+                }       
+            )
+            )
+            )
+        @(
+            Html.DevExtreme().ContextMenu()
+            .ID("ActiveContext")
+            .Target("null")
+            .OnItemClick("onContextMenuItemClick")
+            .Position(p => p.At(HorizontalAlignment.Left, VerticalAlignment.Bottom))
+            .DataSource(d => d.Array()
+            .Data(new List<object>
+        {
+        new { id = "active", text = "Disable" }
+        })
+            )
+            )
+        @(
+            Html.DevExtreme().ContextMenu()
+            .Target("null")
+            .ID("DisabledContext")
+            .OnItemClick("onContextMenuItemClick")
+            .Position(p => p.At(HorizontalAlignment.Left, VerticalAlignment.Bottom))
+            .DataSource(d => d.Array()
+            .Data(new List<object>
+        {       
+        new { id = "disable", text = "Activate" }
+        })
+            )
+            )
+        <!-- DataGrid End -->     
+    </div>
+</div>
+<script>   
+
+    // Функция для получения текстового значения статуса на основе числового значения
+    function getStatusText(status) {
+        switch (status) {
+            case 0:
+                return "NewRegistered";
+            case 1:
+                return "Activated";
+            case 2:
+                return "Disabled";
+            default:
+                return "";
+        }
+    }
+
+
+</script>

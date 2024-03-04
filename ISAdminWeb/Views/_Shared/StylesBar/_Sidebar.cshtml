@@ -1,0 +1,68 @@
+﻿<!-- ========== Left Sidebar Start ========== -->
+<div class="vertical-menu" style="background-color: #2d313e;">
+
+    <!-- LOGO -->
+    <div class="navbar-brand-box" style="background-color: #2d313e;">
+        <a href=@Url.Action("Index", "Home") class="logo logo-dark">
+            <span class="logo-lg">
+                <img src="~/assets/images/intelectsoft/logo/IS-long-green.png" alt="" height="40">
+            </span>
+            <span class="logo-sm">
+                <img src="~/assets/images/intelectsoft/logo/IS-small-green.svg" alt="" height="75" style="margin-left: -40px;">
+            </span>
+        </a>
+
+        <a href=@Url.Action("Index", "Home") class="logo logo-light">
+            <span class="logo-lg">
+                <img src="~/assets/images/intelectsoft/logo/IS-long-green.png" alt="" height="40">
+            </span>
+            <span class="logo-sm">
+                <img src="~/assets/images/intelectsoft/logo/IS-small-green.svg" alt="" height="75" style="margin-left: -40px;">
+            </span>
+        </a>
+    </div>
+
+    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+        <i class="fa fa-fw fa-bars"></i>
+    </button>
+
+    <div data-simplebar class="sidebar-menu-scroll" style="background-color:#2d313e;">
+        <div id="sidebar-menu">
+            <!-- Left Menu Start -->
+            <ul class="metismenu list-unstyled" id="side-menu">
+                <li >
+                    <a href="#" id="Catalog" class="has-arrow waves-effect">
+                        <i class="mdi mdi-menu"></i>
+                        <span>Catalog</span>
+                    </a>
+                    <ul id="CatalogMenu" class="sub-menu">
+
+                        <li >
+                            <a id="Application" href="@Url.Action("Index", "Application")">
+                                <i class="uil-home-alt"></i>
+                                <span>Application</span>
+                            </a>
+                        </li>
+
+                        <li >
+                            <a id="Company" href="@Url.Action("Index", "Company")">
+                                <i class="uil-building"></i>
+                                <span>Company</span>
+                            </a>
+                        </li>
+
+  
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Sidebar -->
+    </div>
+</div>
+<!-- Left Sidebar End -->
+@*
+<script>
+    $(document).ready(function () {
+        UserRoles();
+    });
+</script>*@

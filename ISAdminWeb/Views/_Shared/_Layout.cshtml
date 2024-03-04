@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Html.Partial("~/Views/_Shared/DevExtreme/_DevExtremeStyle.cshtml")
+    @Html.Partial("~/Views/_Shared/DevExtreme/_DevExtremeScripts.cshtml")
+    @*<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="assets/css/app.min.css" rel="stylesheet">*@
+    @Html.Partial("~/Views/_Shared/Meta/_Title_Meta.cshtml")
+    <script src="~/js/ISAdmin.js"></script>
+    <script src="~/js/ISAdminDevextreme.js"></script>
+    @Html.Partial("~/Views/_Shared/Meta/_Head_Css.cshtml")
+
+</head>
+
+<body data-sidebar="dark">
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        @Html.Partial("~/Views/_Shared/StylesBar/_Topbar.cshtml")
+        @Html.Partial("~/Views/_Shared/StylesBar/_Sidebar.cshtml")
+        @Html.Partial("~/Views/_Shared/StylesBar/_Modals.cshtml")
+@*        @Html.Partial("~/Views/_Shared/StylesBar/_Alerts.cshtml")*@
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    @Html.Partial("~/Views/_Shared/StylesBar/_Page_Title.cshtml")
+
+                    <div id="bodyContent">
+                        <div class="container">                            
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div> <!-- container-fluid -->
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+@Html.Partial("~/Views/_Shared/StylesBar/_Right_Sidebar.cshtml")
+
+    @Html.Partial("~/Views/_Shared/Meta/_Vendor_Scripts.cshtml")
+    <script src="~/js/reloadHandler.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        function getApplicationRoot() {
+            return '@Url.Content("~")';
+        };
+    </script>
+</body>
+
+</html>

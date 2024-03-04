@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @await Html.PartialAsync("~/Views/_Shared/DevExtreme/_DevExtremeStyle.cshtml")
+    @await Html.PartialAsync("~/Views/_Shared/DevExtreme/_DevExtremeScripts.cshtml")
+
+    @await Html.PartialAsync("~/Views/_Shared/Meta/_Blank/_Title_Meta.cshtml")
+    @await Html.PartialAsync("~/Views/_Shared/Meta/_Blank/_Head_Css.cshtml")
+
+
+</head>
+
+<body class="authentication-bg">
+    @await Html.PartialAsync("~/Views/_Shared/StylesBar/_Modals.cshtml")
+    @*@await Html.PartialAsync("~/Views/_Shared/StylesBar/_Alerts.cshtml")*@
+
+    <!-- Begin page -->
+    @RenderBody()
+    <!-- END layout-wrapper -->
+    @*    @await Html.PartialAsync("~/Views/_Shared/StylesBar/_Right_Sidebar.cshtml")*@
+
+    @RenderSection("scripts", required: false)
+    @await Html.PartialAsync("~/Views/_Shared/Meta/_Blank/_Vendor_Scripts.cshtml")
+
+
+</body>
+
+<script>
+    function getApplicationRoot() {
+        return '@Url.Content("~")';
+    };
+</script>
+</html>

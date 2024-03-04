@@ -1,0 +1,136 @@
+﻿@using ISAdminWeb.Models;
+@using Domain;
+@model Domain.UserClaim;
+
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/_Shared/_BlankLayout.cshtml";
+}
+
+<script src="~/js/Pages/Account/Authorize/changePasswordMode.js"></script>
+
+<div class="account-pages" style="margin-top: 13vh !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <a href="#" class="d-block auth-logo">
+                        <img src="~/assets/images/intelectsoft/logo/IS-long-green.svg" alt="" height="220" class="logo logo-dark">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <div class="text-center mt-2">
+                            <h5 class="text-success">Авторизация</h5>
+                        </div>                     
+                        <div class="p-2 mt-4">
+                            <form name="loginForm" asp-controller="Account" asp-action="Login" mehod="POST">
+                                <div class="col-md-12">
+                                    @(Html.DevExtreme().TextBoxFor(m => m.Email).ID("Email").LabelMode(EditorLabelMode.Static).Label("Email"))
+                                </div>
+
+                                <div class="col-md-12 pt-2">
+                                    @(Html.DevExtreme().TextBoxFor(m => m.Password).Mode(TextBoxMode.Password).LabelMode(EditorLabelMode.Static).Label("Пароль").ID("password")
+                                        .Buttons(buttons =>
+                                        {
+                                            buttons.Add()
+                                            .Name("passwordBtn")
+                                            .Location(TextEditorButtonLocation.After)
+                                            .Widget(w => w.Button()
+                                            .ID("passwordButton")
+                                            .Type(ButtonType.Normal)
+                                            .StylingMode(ButtonStylingMode.Text)
+                                            .Icon("fa fa-eye")
+                                            .OnClick("changePasswordMode"));
+                                        }))
+                                </div>
+                                <div class="col-md-12 pt-3">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="dropdown d-inline-block language-switch">
+                                                @if (ViewBag.Language == "en")
+                                                {
+                                                    <img src="~/assets/images/flags/us.jpg" height="10" width="18" />
+                                                    <button type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="align-middle">English</span>
+                                                        <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                                                    </button>
+                                                }
+                                                else if (ViewBag.Language == "ru")
+                                                {
+                                                    <img src="~/assets/images/flags/russia.jpg" height="10" width="18">
+                                                    <button type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="align-middle">Русский</span>
+                                                        <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                                                    </button>
+                                                }
+                                                else if (ViewBag.Language == "ro")
+                                                {
+                                                    <img src="~/assets/images/flags/ro.png" height="10" width="18" />
+                                                    <button type="button" class="btn" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="align-middle">Română</span>
+                                                        <i class="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
+                                                    </button>
+                                                }
+
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset" style="text-align: left !important;">
+                                                    <li id="ro" value="ro">
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="ISAdmin.ajaxCultureGET(ISAdmin.BuildActionUrl('Account','ChangeLang') + '/ro')">
+                                                            <img src="~/assets/images/flags/ro.png" height="10" width="18" />
+                                                            <span class="align-middle">Română</span>
+                                                        </a>
+                                                    </li>
+                                                    <li id="ru" value="ru">
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="ISAdmin.ajaxCultureGET(ISAdmin.BuildActionUrl('Account','ChangeLang') + '/ru')">
+                                                            <img src="~/assets/images/flags/russia.jpg" height="10" width="18">
+                                                            <span class="align-middle">Русский</span>
+                                                        </a>
+                                                    </li>
+                                                    <li id="en" value="en">
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="ISAdmin.ajaxCultureGET(ISAdmin.BuildActionUrl('Account','ChangeLang') + '/en')">
+                                                            <img src="~/assets/images/flags/us.jpg" height="10" width="18" />
+                                                            <span class="align-middle">English</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-4 pt-2">
+                                            <a href="/Account/ForgotPassword" class="text-muted">Забыли пароль?</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 pt-4">
+                                    @(Html.DevExtreme().Button().Type(ButtonType.Success).Text("Дальше").Width("100%").UseSubmitBehavior(true))
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 text-center">
+                    <p>
+                        ©
+                        <script>document.write(new Date().getFullYear())</script> Admin Portal. Все права защищены.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<script>
+    $(document).ready(function () {
+        var language = "@ViewBag.Language"; // Получение значения ViewBag.Language
+        updateLanguageButton(language); // Вызов функции для обновления кнопки языка
+    });
+</script>
+<script src="~/js/Pages/Account/Authorize/authorize.js"></script>

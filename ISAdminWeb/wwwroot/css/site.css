@@ -1,0 +1,567 @@
+.first-group,
+.second-group {
+    padding: 20px;
+}
+
+.second-group {
+    background-color: rgba(191, 191, 191, 0.15);
+}
+
+.form-avatar {
+    max-height: 150px;
+    max-width: 340px;
+    margin-right: 10px;
+   /* border: 1px solid #d2d3d5;*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#dropzone-external {
+    width: 350px;
+    height: 125px;
+    background-color: rgba(183, 183, 183, 0.1);
+    border-width: 2px;
+    border-style: dashed;
+    padding: 10px;
+    max-height: 150px;
+}
+
+    #dropzone-external > * {
+        pointer-events: none;
+    }
+
+    #dropzone-external.dropzone-active {
+        border-style: solid;
+    }
+
+.widget-container > span {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+#dropzone-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#dropzone-text > span {
+    font-weight: 100;
+    opacity: 0.5;
+}
+
+#upload-progress {
+    display: flex;
+    margin-top: 10px;
+}
+
+.flex-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hiddenInput {
+    display: none;
+}
+.text-ellipsis--6 {
+    word-break:break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.message-text{
+    font-weight:300;
+    line-height:1.2;
+}
+
+.noData {
+    background-image: url(../../../assets/images/noData.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.noDocumentation {
+    background-image: url(../../../assets/images/noDocumentation.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+@media (max-width:991px) {
+    #parametersSettingItem.noData {
+        background-image: url(../../../assets/images/noData.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 300px;
+    }
+}
+
+#companyManage.dx-button-has-icon .dx-icon {
+    font-size: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.image-area {
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .image-area img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.remove-image {
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 10em;
+    padding: 2px 6px 3px;
+    text-decoration: none;
+    font: 700 21px/20px sans-serif;
+    background: #555;
+    border: 3px solid #fff;
+    color: #FFF;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-transition: background 0.5s;
+    transition: background 0.5s;
+}
+
+    .remove-image:hover {
+        background: #FFF;
+        padding: 3px 7px 5px;
+        top: -11px;
+        right: -11px;
+        border: 3px solid #555;
+        color: #555 !important;
+    }
+
+    .remove-image:active {
+        background: #FFF;
+        top: -10px;
+        right: -11px;
+    }
+
+
+.hiddenDiv {
+    visibility: hidden;
+}
+
+.note {
+    font-size: 10pt;
+    color: #484848;
+    margin-left: 9px;
+}
+
+    .note > span {
+        font-weight: 700
+    }
+
+/*Start Documentation*/
+.sizeCardDocumentation {
+    height: calc(100vh - 233px) !important;
+}
+
+@media (max-width:768px) {
+    .sizeCardDocumentation {
+        height: calc(100vh + 100%) !important;
+    }
+}
+
+#descriptionDocument {
+    max-height: 100%;
+    height: calc(100vh - 370px) !important;
+}
+@media (max-width:900px) {
+    #descriptionDocument {
+        height: calc(100vh - 365px) !important;
+    }
+}
+
+@media (max-width:768px) {
+    #descriptionDocument {
+        height: calc(100vh + 100%) !important;
+    }
+}
+#treeViewDocumentationItem {
+    max-height: 100%;
+    height: calc(100vh - 300px) !important;
+}
+@media (max-width:900px) {
+    #treeViewDocumentationItem {
+        height: calc(100vh - 300px) !important;
+    }
+}
+@media (max-width:768px) {
+    #treeViewDocumentationItem {
+        height: calc(100vh - 535px) !important;
+    }
+}
+
+@media (max-width:375px) {
+    #treeViewDocumentationItem {
+        height: calc(100vh - 360px) !important;
+    }
+}
+
+#nameDocumentation > .name {
+    margin-left: 0px;
+    font-size: 25px;
+}
+
+@media (max-width:900px) {
+    #nameDocumentation > .name {
+        margin-left: 0px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width:768px) {
+
+    #contentDocumentation {
+        width: 100%;
+    }
+
+    #contentTreeView {
+        width: 100%;
+    }
+}
+@media (max-width:498px) {
+    #addDocumentationItem {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    #editDocumentationItem {
+        width: 59%;
+    }
+
+    #deleteDocumentationItem {
+        width: 40%;
+    }
+}
+@media (max-width:1533px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.9%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:1265px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.5%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:1019px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+
+@media (max-width:995px) {
+    #cancelDocumentation {
+        width: auto;
+    }
+
+    #saveDocumentation {
+        width: auto;
+    }
+
+    #saveAsDraft {
+        width: auto;
+        margin-top: 0;
+    }
+}
+
+@media (max-width:485px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.9%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:426px) {
+    #addDocumentationItem {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+
+    #editDocumentationItem {
+        width: 58.9%;
+    }
+
+    #deleteDocumentationItem {
+        width: 40%;
+    }
+}
+@media (max-width:410px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.7%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:395px) {
+    #addDocumentationItem {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+    #editDocumentationItem {
+        width: 100%;
+        margin-bottom: 3px;
+    }
+    #deleteDocumentationItem {
+        width: 100%;
+    }
+}
+@media (max-width:378px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.6%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:332px) {
+    #cancelDocumentation {
+        width: 40%;
+    }
+
+    #saveDocumentation {
+        width: 58.4%;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+@media (max-width:313px) {
+    #cancelDocumentation {
+        width: 100%;
+    }
+
+    #saveDocumentation {
+        width: 100%;
+        margin-top: 3px;
+    }
+
+    #saveAsDraft {
+        width: 100%;
+        margin-top: 3px;
+    }
+}
+
+#editorDescription {
+    height: calc(100vh - 315px) !important;
+}
+
+.sizeCardEditor {
+    height: calc(100vh - 197px) !important;
+}
+@media (max-width:1533px) {
+    #editorDescription {
+        height: calc(100vh - 345px) !important;
+    }
+}
+
+@media (max-width:768px) {
+    .sizeCardEditor {
+        height: calc(100vh + 100%) !important;
+    }
+
+    #editorDescription {
+        height: calc(100vh + 200px) !important;
+    }
+}
+/*End Documentation*/
+
+/*Start Template*/
+.sizeCardTemplate {
+    height: calc(100vh - 197px) !important;
+}
+
+#templateEN   {
+    height: calc(100vh - 330px) !important;
+}
+#templateRO {
+    height: calc(100vh - 330px) !important;
+}
+#templateRU {
+    height: calc(100vh - 330px) !important;
+}
+
+@media (max-width:768px) {
+    .sizeCardTemplate {
+        height: calc(100vh + 100%) !important;
+    }
+
+    #metaDataTemplate {
+        margin-top:10px;
+    }
+}
+/*End Template*/
+
+/*Start Ticket*/
+.titleImgTicket {
+    width: 94px;
+    word-wrap: break-word;
+    display: inline-block;
+    margin-left: 10px;
+}
+.popupImgSize {
+    margin-left: 15px;
+    float: left;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+@media (max-width:550px) {
+    .popupImgSize {
+        width: 50px;
+        height: 50px;
+    }
+    .titleImgTicket {
+        width: 60px;
+    }
+    .titleTicket{
+        font-size:100%;
+    }
+    .datetimeTicket {
+        font-size: 80%;
+    }
+    .replayAuthotTicket {
+        font-size: 75%;
+    }
+    .replayDatetimeTicket {
+        font-size: 75%;
+    }
+}
+/*End Ticket*/
+
+/*Start Fiscal receipt*/
+.receipt {
+    width: 390px;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.contentReceipt {
+    width: 356px;
+    padding: 1rem 1rem;
+    align-self: center
+}
+
+@media (max-width: 1400px) {
+    .receipt {
+        width: 100%
+    }
+
+    .contentReceipt {
+        width: 90%;
+        font-size: 85%;
+    }
+}
+
+@media (max-width: 1450px) {
+    .receipt {
+        width: 100%
+    }
+
+    .contentReceipt {
+        width: 90%;
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .receipt {
+        width: 100%
+    }
+
+    .contentReceipt {
+        width: 90%;
+        font-size: 75%;
+    }
+}
+
+@media (max-width: 992px) {
+    .receipt {
+        width: 390px
+    }
+
+    .contentReceipt {
+        width: 356px;
+        font-size: 100%;
+    }
+}
+@media (max-width: 490px) {
+    .receipt {
+        width: 100%;
+    }
+
+    .contentReceipt {
+        width: 95%;
+        font-size: 100%;
+    }
+}
+/*End Fiscal receipt*/

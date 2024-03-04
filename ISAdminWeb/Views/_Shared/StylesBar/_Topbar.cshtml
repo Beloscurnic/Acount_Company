@@ -1,0 +1,63 @@
+﻿@using ISAdminWeb.Service
+@using static Domain.Enums;
+@using Newtonsoft.Json;
+@inject ICurrentUserService currentUserService
+
+@{
+    
+}
+<header id="page-topbar">
+    <div class="navbar-header" style="background-color: #2d313e; height:70px;">
+        <div class="d-flex" style="background-color: #2d313e; height:70px;">
+            <!-- LOGO -->
+            <div class="navbar-brand-box" style="background-color: #2d313e; height:70px;">
+                <a href=@Url.Action("Index", "Home") class="logo logo-dark">
+                    <span class="logo-lg">
+                        <img src="~/assets/images/intelectsoft/logo/IS-long-green.png" alt="" height="125">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="~/assets/images/intelectsoft/logo/IS-small-green.svg" alt="" height="75" style="margin-left: -40px;margin-right -40px;">
+                    </span>
+                </a>
+
+                <a href=@Url.Action("Index", "Home") class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="~/assets/images/intelectsoft/logo/IS-long-green.png" alt="" height="125">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="~/assets/images/intelectsoft/logo/IS-small-green.svg" alt="" height="75" style="margin-left: -40px;margin-right -40px;">
+                    </span>
+                </a>
+            </div>
+            
+                <input type="text" id="navigations" value="" hidden disabled style="display:none" />
+            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
+                <i class="fa fa-fw fa-bars text-grey-navbar"></i>
+            </button>
+        </div>
+
+        <div class="d-flex" style="background-color: #2d313e; height:70px;">
+
+            
+
+           
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" id="photoUser" src="@currentUserService.Picture" style="object-fit:cover; padding:1.5px;"
+                         alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ms-1 fw-medium font-size-15 text-grey-navbar" id="userFullName">@currentUserService.FullName</span>
+                    <i class="uil-angle-down d-none d-xl-inline-block font-size-15 text-grey-navbar"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end" style="z-index:1070">
+                    <!-- item-->
+                    <a class="dropdown-item d-block" href="@Url.Action("Setting", "Home")"><i class="uil uil-cog font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">Settings</span></a>
+                    <a class="dropdown-item" href="@Url.Action("LockScreen", "Account")"><i class="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">LockScreen</span></a>
+                    <a class="dropdown-item" href="@Url.Action("Logout", "Account")"><i class="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i> <span class="align-middle">SignOut</span></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>

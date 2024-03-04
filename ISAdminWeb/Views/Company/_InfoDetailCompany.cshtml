@@ -1,0 +1,94 @@
+﻿@using ISAdminWeb.Models.Company;
+@model ISAdminWeb.Models.Company.UPSertCompany_ViewModel;
+
+
+<script src="~/js/Pages/Company/Upsert/upsertDevexpress.js"></script>
+@if (ViewBag.HeaderText == "Disabled")
+{
+    <h3 class="message-text">Вы хотите активировать компанию <i>@Model.JuridicalName</i> ?</h3>
+}
+else
+{
+    <h3 class="message-text">Вы хотите деактивировать компанию <i>@Model.JuridicalName</i> ?</h3>
+}
+@{
+
+}
+
+
+@(Html.DevExtreme().TextBoxFor(m => m.ID).LabelMode(EditorLabelMode.Floating).Label("ID").Visible(false))
+@(Html.DevExtreme().TextBoxFor(m => m.Status).LabelMode(EditorLabelMode.Floating).Label("Status").Visible(false))
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div>@(Html.DevExtreme().TextBoxFor(m => m.JuridicalName).LabelMode(EditorLabelMode.Floating).Label("JuridicalName").ReadOnly(true))</div>
+            <div>@(Html.DevExtreme().TextBoxFor(m => m.CommercialName).LabelMode(EditorLabelMode.Floating).Label("CommercialName").ReadOnly(true))</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            @(Html.DevExtreme().TextBoxFor(m => m.IDNO).LabelMode(EditorLabelMode.Floating).Label("IDNO").ReadOnly(true))
+        </div>
+        <div class="col-md-6">
+            @(Html.DevExtreme().TextBoxFor(m => m.VATCode).LabelMode(EditorLabelMode.Floating).Label("VATCode").ReadOnly(true))
+        </div>
+        <div class="col-md-"></div>
+    </div>
+    <!-- Строка с тремя колонками -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="col-md-4">
+
+                @(Html.DevExtreme().SelectBoxFor(m => m.CountryID).Placeholder("ChooseCountry").DataSource(new object[]
+                    {
+                new { ID = 1, Name = "Молдова" },
+                new { ID = 2, Name = "Румыния" },
+                new { ID = 3, Name = "Россия" },
+                new { ID = 4, Name = "Украина" }
+                    }).ValueExpr("ID").DisplayExpr("Name").LabelMode(EditorLabelMode.Floating).Label("Country").ReadOnly(true))
+            </div>
+            <div class="col-md-4">
+                @(Html.DevExtreme().TextBoxFor(m => m.JuridicalAddress).LabelMode(EditorLabelMode.Floating).Label("JuridicalAddress").ReadOnly(true))
+            </div>
+            <div class="col-md-4">
+                @(Html.DevExtreme().TextBoxFor(m => m.OfficeAddress).LabelMode(EditorLabelMode.Floating).Label("OfficeAddress").ReadOnly(true))
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                @(Html.DevExtreme().TextBoxFor(m => m.IBAN).LabelMode(EditorLabelMode.Floating).Label("IBAN").ReadOnly(true))
+            </div>
+            <div class="col-md-4">
+                @(Html.DevExtreme().TextBoxFor(m => m.BIC).LabelMode(EditorLabelMode.Floating).Label("BIC").ReadOnly(true))
+            </div>
+            <div class="col-md-4">
+                @(Html.DevExtreme().TextBoxFor(m => m.Bank).LabelMode(EditorLabelMode.Floating).Label("Bank").ReadOnly(true))
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                @(Html.DevExtreme().TextBoxFor(m => m.ShortName).LabelMode(EditorLabelMode.Floating).Label("Alias").ReadOnly(true))
+            </div>
+            <div class="col-md-6">
+                @(Html.DevExtreme().TagBoxFor(m => m.ESMAlias).Items(Model.ESMAlias).InputAttr("aria-label", "ESMAliasCompany").ID("ESMAliasCompany").LabelMode(EditorLabelMode.Floating).Label("AliasESM").AcceptCustomValue(true).HideSelectedItems(true).ReadOnly(true))
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div>@(Html.DevExtreme().TextBoxFor(m => m.WebSite).LabelMode(EditorLabelMode.Floating).Label("WebSite").ReadOnly(true))</div>
+            </div>
+        </div>
+        <h5 class="message-text">Notifications </h5>
+        <div class="row">
+            <div class="col-md-12">
+                <div>@(Html.DevExtreme().TextBoxFor(m => m.Email).LabelMode(EditorLabelMode.Floating).Label("Email").ReadOnly(true))</div>
+                <div>@(Html.DevExtreme().TextBoxFor(m => m.PhoneNumber).LabelMode(EditorLabelMode.Floating).Label("PhoneNumber").ReadOnly(true))</div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        @(Html.DevExtreme().Button().Type(ButtonType.Normal).Text("Cancel").OnClick("closeModalClick"))     
+    </div>
+</div>

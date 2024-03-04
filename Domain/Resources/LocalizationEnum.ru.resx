@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Constantly" xml:space="preserve">
+    <value>Часто</value>
+  </data>
+  <data name="Periodically" xml:space="preserve">
+    <value>Периодически</value>
+  </data>
+  <data name="Rarely" xml:space="preserve">
+    <value>Редко</value>
+  </data>
+  <data name="Impossible" xml:space="preserve">
+    <value>Невозможно</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Мобильное приложение</value>
+  </data>
+  <data name="OnPremiseDesktopApplications" xml:space="preserve">
+    <value>Настольные приложения</value>
+  </data>
+  <data name="SaaSDesktopApplications" xml:space="preserve">
+    <value>Настольные приложения SAAS</value>
+  </data>
+  <data name="SaaSWebApplications" xml:space="preserve">
+    <value>Веб-приложения SAAS</value>
+  </data>
+  <data name="CloudService" xml:space="preserve">
+    <value>Облачный сервис</value>
+  </data>
+  <data name="NonType" xml:space="preserve">
+    <value>Non</value>
+  </data>
+  <data name="AppType" xml:space="preserve">
+    <value>Приложение</value>
+  </data>
+  <data name="ServiceType" xml:space="preserve">
+    <value>Сервис</value>
+  </data>
+  <data name="WEBType" xml:space="preserve">
+    <value>ВЕБ</value>
+  </data>
+  <data name="MobileType" xml:space="preserve">
+    <value>Мобильный</value>
+  </data>
+  <data name="Activated" xml:space="preserve">
+    <value>Активировано</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Деактивировано</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Активировать</value>
+  </data>
+  <data name="NewRegistered" xml:space="preserve">
+    <value>Новая регистрация</value>
+  </data>
+  <data name="ReadOnly" xml:space="preserve">
+    <value>Только чтение</value>
+  </data>
+  <data name="Allow" xml:space="preserve">
+    <value>Разрешено</value>
+  </data>
+  <data name="Deny" xml:space="preserve">
+    <value>Запрещено</value>
+  </data>
+  <data name="NotActivated" xml:space="preserve">
+    <value>Не активировано</value>
+  </data>
+  <data name="Blocked" xml:space="preserve">
+    <value>Заблокировано</value>
+  </data>
+  <data name="NewEntity" xml:space="preserve">
+    <value>Новая сущность</value>
+  </data>
+  <data name="CreatingNewDatabase" xml:space="preserve">
+    <value>Создание новой базы данных</value>
+  </data>
+  <data name="NewDatabase" xml:space="preserve">
+    <value>Новая база данных</value>
+  </data>
+  <data name="UpdatingSchema" xml:space="preserve">
+    <value>Обновление схемы</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Готово</value>
+  </data>
+  <data name="Maintenance" xml:space="preserve">
+    <value>Обслуживание</value>
+  </data>
+  <data name="SchemaNeedsToBeUpdated" xml:space="preserve">
+    <value>Необходимо обновить схему</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Recycled" xml:space="preserve">
+    <value>Утилизировано</value>
+  </data>
+  <data name="ServerIsNotSet" xml:space="preserve">
+    <value>Сервер не задан</value>
+  </data>
+  <data name="ErrorDatabaseConnect" xml:space="preserve">
+    <value>Ошибка подключения к базе данных</value>
+  </data>
+  <data name="ErrorMEVConnect" xml:space="preserve">
+    <value>Ошибка подключения MEV</value>
+  </data>
+  <data name="ErrorDatabaseServerConnect" xml:space="preserve">
+    <value>Ошибка подключения к серверу базы данных</value>
+  </data>
+  <data name="Bug" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Issues" xml:space="preserve">
+    <value>Проблема</value>
+  </data>
+  <data name="Suggestion" xml:space="preserve">
+    <value>Предложение</value>
+  </data>
+  <data name="Nothing" xml:space="preserve">
+    <value>Ничего</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Новый</value>
+  </data>
+  <data name="Viewed" xml:space="preserve">
+    <value>Просмотренно</value>
+  </data>
+  <data name="InProgress" xml:space="preserve">
+    <value>В процесе</value>
+  </data>
+  <data name="Fixed" xml:space="preserve">
+    <value>Исправлено</value>
+  </data>
+  <data name="Closed" xml:space="preserve">
+    <value>Закрыто</value>
+  </data>
+  <data name="Reopen" xml:space="preserve">
+    <value>Возобновлено</value>
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value>Отклонено</value>
+  </data>
+  <data name="Testing" xml:space="preserve">
+    <value>Тестирование</value>
+  </data>
+  <data name="Approved" xml:space="preserve">
+    <value>Одобренно</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Черновик</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Удалено</value>
+  </data>
+  <data name="Critical" xml:space="preserve">
+    <value>Критически</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="Verbose" xml:space="preserve">
+    <value>Подробно</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Старт</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Стоп</value>
+  </data>
+  <data name="Suspend" xml:space="preserve">
+    <value>Приостановленно</value>
+  </data>
+  <data name="Resume" xml:space="preserve">
+    <value>Итог</value>
+  </data>
+  <data name="Transfer" xml:space="preserve">
+    <value>Передача</value>
+  </data>
+  <data name="DisabledByMEV" xml:space="preserve">
+    <value>Деактивировано от MEV</value>
+  </data>
+  <data name="NotSet" xml:space="preserve">
+    <value>Не задано</value>
+  </data>
+  <data name="ServiceReceipt" xml:space="preserve">
+    <value>Служебный чек</value>
+  </data>
+  <data name="FiscalReceipt" xml:space="preserve">
+    <value>Фискальный чек</value>
+  </data>
+  <data name="FiscalReport" xml:space="preserve">
+    <value>Фискальный отчёт</value>
+  </data>
+  <data name="Setting1" xml:space="preserve">
+    <value>Настройка 1</value>
+  </data>
+  <data name="Setting2" xml:space="preserve">
+    <value>Настройка 2</value>
+  </data>
+  <data name="Setting3" xml:space="preserve">
+    <value>Настройка 3</value>
+  </data>
+  <data name="NotFiscal" xml:space="preserve">
+    <value>Не фискальный</value>
+  </data>
+  <data name="Indeterminate" xml:space="preserve">
+    <value>Неопределен</value>
+  </data>
+  <data name="IsOK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Сброс пароля</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Новый пользователь</value>
+  </data>
+</root>
